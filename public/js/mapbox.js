@@ -61,8 +61,10 @@ var chapters = {
 ////////// Map Reposition w/ Chapter Tracker /////////////
 //////////////////////////////////////////////////////////
 
-// On every scroll event, check which element is on screen
-window.onscroll = function() {
+var last_known_scroll_position = 0;
+var ticking = false;
+
+function checkElem(scroll_pos) {
   var chapterNames = Object.keys(chapters);
   for (var i = 0; i < chapterNames.length; i++) {
       var chapterName = chapterNames[i];
@@ -70,8 +72,18 @@ window.onscroll = function() {
           setActiveChapter(chapterName);
           break;
       }
+  }}
+
+window.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      checkElem(last_known_scroll_position);
+      ticking = false;
+    });
   }
-};
+  ticking = true;
+});
 
 
 // Chapter Tracker
