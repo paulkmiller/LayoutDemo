@@ -62,7 +62,7 @@ var chapters = {
 //////////////////////////////////////////////////////////
 
 // On every scroll event, check which element is on screen
-window.onscroll = function() {
+window.addEventListener('scroll', function(e) {
   var chapterNames = Object.keys(chapters);
   for (var i = 0; i < chapterNames.length; i++) {
       var chapterName = chapterNames[i];
@@ -71,7 +71,7 @@ window.onscroll = function() {
           break;
       }
   }
-};
+});
 
 
 // Chapter Tracker
