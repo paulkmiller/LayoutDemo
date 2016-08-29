@@ -90,6 +90,8 @@ function setActiveChapter(chapterName) {
 function isElementOnScreen(id) {
   var element = document.getElementById(id);
   var bounds = element.getBoundingClientRect();
-  return bounds.top < window.innerHeight && bounds.bottom > 0;
+  var flyby = document.getElementsByClassName("flyby")[0];
+
+  return bounds.top < flyby.innerHeight && bounds.bottom > 0;
 }
 })();
