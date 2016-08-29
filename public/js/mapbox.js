@@ -61,47 +61,34 @@ var chapters = {
 ////////// Map Reposition w/ Chapter Tracker /////////////
 //////////////////////////////////////////////////////////
 
-var last_known_scroll_position = 0;
-var ticking = false;
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
 
-function checkElem(scroll_pos) {
-  var chapterNames = Object.keys(chapters);
-  for (var i = 0; i < chapterNames.length; i++) {
-      var chapterName = chapterNames[i];
-      if (isElementOnScreen(chapterName)) {
-          setActiveChapter(chapterName);
-          break;
-      }
-  }}
-
-window.addEventListener('scroll', function(e) {
-  last_known_scroll_position = window.scrollY;
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      checkElem(last_known_scroll_position);
-      ticking = false;
-    });
-  }
-  ticking = true;
-});
-
-
-// Chapter Tracker
 var activeChapterName = 'home';
 function setActiveChapter(chapterName) {
-  if (chapterName === activeChapterName) return;
+    if (chapterName === activeChapterName) return;
 
-  map.flyTo(chapters[chapterName]);
+    map.flyTo(chapters[chapterName]);
 
-  document.getElementById(chapterName).setAttribute('class', 'active');
-  document.getElementById(activeChapterName).setAttribute('class', '');
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
 
-  activeChapterName = chapterName;
+    activeChapterName = chapterName;
 }
 
 function isElementOnScreen(id) {
-  var element = document.getElementById(id);
-  var bounds = element.getBoundingClientRect();
-  return bounds.top < window.innerHeight && bounds.bottom > 0;
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
+
 })();
