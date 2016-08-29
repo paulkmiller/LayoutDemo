@@ -198,4 +198,36 @@
 
 	init();
 
+
+	//=======begin Masatoshi=============
+	var mnOffset = 0;
+
+  $('.scroll-wrap').on('scroll', function() {
+			mnOffset = $(this).scrollTop()
+			console.log(mnOffset)
+
+			if (mnOffset >= 200 - 10 && mnOffset < 640 - 10) {
+					$('section').removeClass('active')
+					$('#listing1').addClass('active')
+			} else if (mnOffset >= 640 - 10 && mnOffset < 1080 - 10) {
+					$('section').removeClass('active')
+					$('#listing2').addClass('active')
+			} else if (mnOffset >= 1080 - 10 && mnOffset < 1520 - 10) {
+					$('section').removeClass('active')
+          $('#listing3').addClass('active')
+			} else if (mnOffset >= 1520 - 10 && mnOffset < 1960 - 10) {
+					$('section').removeClass('active')
+          $('#listing4').addClass('active')
+			} else if (mnOffset >= 1960 - 10 && mnOffset < 2400 - 10) {
+					$('section').removeClass('active')
+          $('#listing5').addClass('active')
+			} else if (mnOffset >= 2400 - 10 && mnOffset < 2840 - 10) {
+					$('section').removeClass('active')
+          $('#listing6').addClass('active')
+			} else if (mnOffset >= 2840 - 10) {
+					$('section').removeClass('active')
+          $('#listing7').addClass('active')
+			}
+	})
+	//=======end Masatoshi=============
 })();
