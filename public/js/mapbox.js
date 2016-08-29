@@ -1,5 +1,6 @@
 
 (function() {
+  console.log("file loaded");
 mapboxgl.accessToken = 'pk.eyJ1IjoicG1pbGxlcmsiLCJhIjoiY2lyM3VjMzNsMDFkZHR4bHdxOWs1amt1MiJ9.nc1fPKTYXlgC1zVoYS2Oag';
 var map = new mapboxgl.Map({
     container: 'map',
@@ -93,5 +94,6 @@ function isElementOnScreen(id) {
   var flyby = document.getElementsByClassName("flyby")[0];
 
   return bounds.top < flyby.innerHeight && bounds.bottom > 0;
+  console.log(return bounds.top < flyby.innerHeight && bounds.bottom > 0);
 }
 })();
