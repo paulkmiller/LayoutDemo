@@ -62,29 +62,43 @@ var chapters = {
 //////////////////////////////////////////////////////////
 
 // On every scroll event, check which element is on screen
-window.onscroll = function() {
+document.querySelector('.scroll-wrap').addEventListener('scroll', function() {
     var chapterNames = Object.keys(chapters);
     for (var i = 0; i < chapterNames.length; i++) {
         var chapterName = chapterNames[i];
+
+        // Handle only the first occurence and exit the loop.
         if (isElementOnScreen(chapterName)) {
             setActiveChapter(chapterName);
             break;
         }
     }
-};
+});
 
+// The CSS id of the currently active chapter.
 var activeChapterName = 'home';
+
+/**
+ * @param {String} chapterName The
+ */
 function setActiveChapter(chapterName) {
+    // Ignore if the specified chapter is already active.
     if (chapterName === activeChapterName) return;
 
+    // Update the map.
     map.flyTo(chapters[chapterName]);
 
+    // Update the active chapter.
     document.getElementById(chapterName).setAttribute('class', 'active');
     document.getElementById(activeChapterName).setAttribute('class', '');
 
     activeChapterName = chapterName;
 }
 
+/**
+ * @param  {String}  id The CSS id of the element in question.
+ * @return {Boolean} true if element is displayed on the screen else false.
+ */
 function isElementOnScreen(id) {
     var element = document.getElementById(id);
     var bounds = element.getBoundingClientRect();

@@ -9,8 +9,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rack (~> 1.5)
-  vienna
+  rack (= 1.6.4)
+  vienna (= 0.4.1)
 
 BUNDLED WITH
    1.12.5
