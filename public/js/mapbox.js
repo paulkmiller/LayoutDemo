@@ -78,9 +78,7 @@ document.querySelector('.scroll-wrap').addEventListener('scroll', function() {
 // The CSS id of the currently active chapter.
 var activeChapterName = 'home';
 
-/**
- * @param {String} chapterName The
- */
+
 function setActiveChapter(chapterName) {
     // Ignore if the specified chapter is already active.
     if (chapterName === activeChapterName) return;
@@ -95,10 +93,7 @@ function setActiveChapter(chapterName) {
     activeChapterName = chapterName;
 }
 
-/**
- * @param  {String}  id The CSS id of the element in question.
- * @return {Boolean} true if element is displayed on the screen else false.
- */
+
 function isElementOnScreen(id) {
     var element = document.getElementById(id);
     var bounds = element.getBoundingClientRect();

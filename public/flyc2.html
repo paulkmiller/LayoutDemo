@@ -97,7 +97,8 @@
         </p>
     </section>
 </div>
-<script>var map = new mapboxgl.Map({
+<script>
+var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [-98, 38.88],
@@ -179,27 +180,4 @@ function isElementOnScreen(id) {
     var bounds = element.getBoundingClientRect();
     return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
-</script>
-   }
-        }
-    };
-
-    var activeChapterName = 'home';
-
-    function setActiveChapter(chapterName) {
-        if (chapterName === activeChapterName) return;
-
-        map.flyTo(chapters[chapterName]);
-
-        document.getElementById(chapterName).setAttribute('class', 'active');
-        document.getElementById(activeChapterName).setAttribute('class', '');
-
-        activeChapterName = chapterName;
-    }
-
-    function isElementOnScreen(id) {
-        var element = document.getElementById(id);
-        var bounds = element.getBoundingClientRect();
-        return bounds.top < window.innerHeight && bounds.bottom > 0;
-    }
 </script>
