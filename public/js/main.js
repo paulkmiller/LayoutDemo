@@ -148,7 +148,6 @@
 			classie.add(contentItems[current], 'content__item--show');
 			// show close control
 			classie.add(closeCtrl, 'close-button--show');
-			// sets overflow hidden to the body and allows the switch to the content scroll
 
 			isAnimating = false;
 		});

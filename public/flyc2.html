@@ -1,0 +1,205 @@
+<style>#map {
+    position: fixed;
+    width: 70%;
+    height: 100%;
+}
+#features {
+    width: 30%;
+    margin-left: 70%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+    section{
+      padding:  25px 50px;
+      line-height: 25px;
+      border-bottom: 1px solid #ddd;
+      opacity: 0.25;
+      font-size: 13px;
+      &.active{
+        opacity: 1;
+        color: black;
+      }
+      &:last-child{
+        border-bottom: none;
+        margin-bottom: 200px;
+      }
+    }
+}
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
+  display: none;
+}
+.active{
+  display: block !important;
+}
+
+.map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+    border-radius: 3px;
+    position: absolute;
+    width: 25%;
+    top: 10px;
+    left: 10px;
+    padding: 10px;
+    display: none;
+}
+</style>
+<div id='map'></div>
+  <div id='features'>
+    <section id='home' class='active'>
+        <h3>Greater Washington Publishing</h3>
+        <p>1800 Alexander Bell Drive, Ste 120 <br>Reston VA 20191</p>
+    </section>
+    <section id='listing1'>
+        <h3>Listing1</h3>
+        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+        </p>
+    </section>
+    <section id='listing2'>
+        <h3>Listing2</h3>
+        <p>Readymade chambray church-key whatever keytar marfa. Helvetica ramps salvia man braid, disrupt blue bottle truffaut literally</p>
+        <p>humblebrag tilde waistcoat hashtag portland 3 wolf moon craft beer. Tote bag waistcoat hella, VHS man braid bicycle rights aesthetic
+            schlitz shoreditch flannel austin seitan. Blue bottle bitters slow-carb everyday carry, leggings sustainable shoreditch narwhal.
+        </p>
+    </section>
+    <section id='listing3'>
+        <h3>Listing3</h3>
+        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+        </p>    </section>
+    <section id='listing4'>
+        <h3>Listing4</h3>
+        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+        </p>    </section>
+    <section id='listing5'>
+        <h3>Listing5</h3>
+        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+        </p>    </section>
+    <section id='listing6'>
+        <h3>Listing6</h3>
+        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+        </p>    </section>
+    <section id='listing7'>
+        <h3>Listing7</h3>
+        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+        </p>
+    </section>
+</div>
+<script>var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v9',
+    center: [-98, 38.88],
+    minZoom: 2,
+    zoom: 3
+});
+
+var chapters = {
+'home': {
+    bearing: 27,
+    center: [-77.321264, 38.943057],
+    zoom: 15.5
+},
+'listing1': {
+    duration: 6000,
+    center: [-77.321264, 39.943057],
+    bearing: 150,
+    zoom: 15
+   },
+'listing2': {
+    bearing: 90,
+    center: [-77.321264, 40.943057],
+    zoom: 13,
+    speed: 0.6
+},
+'listing3': {
+    bearing: 90,
+    center: [-77.321264, 41.943057],
+    zoom: 12.3
+},
+'listing4': {
+    bearing: 45,
+    center: [-77.321264, 42.943057],
+    zoom: 15.3,
+    speed: 0.5
+},
+'listing5': {
+    bearing: 180,
+    center: [-77.321264, 43.943057],
+    zoom: 12.3
+},
+'listing6': {
+    bearing: 90,
+    center: [-77.321264, 44.943057],
+    zoom: 17.3
+},
+'listing7': {
+    bearing: 90,
+    center: [-77.321264, 45.943057],
+    zoom: 14.3
+}
+};
+
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'home';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+</script>
+   }
+        }
+    };
+
+    var activeChapterName = 'home';
+
+    function setActiveChapter(chapterName) {
+        if (chapterName === activeChapterName) return;
+
+        map.flyTo(chapters[chapterName]);
+
+        document.getElementById(chapterName).setAttribute('class', 'active');
+        document.getElementById(activeChapterName).setAttribute('class', '');
+
+        activeChapterName = chapterName;
+    }
+
+    function isElementOnScreen(id) {
+        var element = document.getElementById(id);
+        var bounds = element.getBoundingClientRect();
+        return bounds.top < window.innerHeight && bounds.bottom > 0;
+    }
+</script>
