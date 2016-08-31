@@ -867,6 +867,13 @@ button:focus {
       border-bottom: none;
       margin-bottom: 200px; }
 
+.marker {
+  height: 20px;
+  width: 20px;
+  background-color: #42b7b2;
+  border: 2px solid #fff;
+  border-radius: 10px; }
+
 .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
   display: none; }
 

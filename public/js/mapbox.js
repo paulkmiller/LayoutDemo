@@ -10,51 +10,66 @@ var map = new mapboxgl.Map({
 });
 
 var chapters = {
-'home': {
-    bearing: 27,
-    center: [-77.321264, 38.943057],
-    zoom: 15.5
-},
-'listing1': {
-    duration: 6000,
-    center: [-77.321264, 39.943057],
-    bearing: 150,
-    zoom: 15
-   },
-'listing2': {
-    bearing: 90,
-    center: [-77.321264, 40.943057],
-    zoom: 13,
-    speed: 0.6
-},
-'listing3': {
-    bearing: 90,
-    center: [-77.321264, 41.943057],
-    zoom: 12.3
-},
-'listing4': {
-    bearing: 45,
-    center: [-77.321264, 42.943057],
-    zoom: 15.3,
-    speed: 0.5
-},
-'listing5': {
-    bearing: 180,
-    center: [-77.321264, 43.943057],
-    zoom: 12.3
-},
-'listing6': {
-    bearing: 90,
-    center: [-77.321264, 44.943057],
-    zoom: 17.3
-},
-'listing7': {
-    bearing: 90,
-    center: [-77.321264, 45.943057],
-    zoom: 14.3
-}
+  'home': {
+      bearing: 27,
+      center: [-77.321264, 38.943057],
+      zoom: 15.5,
+  },
+  'listing1': {
+      duration: 6000,
+      center: [-77.321264, 39.943057],
+      bearing: 150,
+      zoom: 15
+     },
+  'listing2': {
+      bearing: 90,
+      center: [-77.321264, 40.943057],
+      zoom: 13,
+      speed: 0.6
+  },
+  'listing3': {
+      bearing: 90,
+      center: [-77.321264, 41.943057],
+      zoom: 12.3
+  },
+  'listing4': {
+      bearing: 45,
+      center: [-77.321264, 42.943057],
+      zoom: 15.3,
+      speed: 0.5
+  },
+  'listing5': {
+      bearing: 180,
+      center: [-77.321264, 43.943057],
+      zoom: 12.3
+  },
+  'listing6': {
+      bearing: 90,
+      center: [-77.321264, 44.943057],
+      zoom: 17.3
+  },
+  'listing7': {
+      bearing: 90,
+      center: [-77.321264, 45.943057],
+      zoom: 14.3
+  }
 };
 
+var el = document.createElement('div');
+el.className = 'marker';
+
+$.each(chapters, function(listing_id, hash) {
+  console.log(hash["center"]);
+
+  marker = new mapboxgl.Marker(el)
+  .setLngLat(hash["center"])
+  .addTo(map);
+});
+
+
+var marker = new mapboxgl.Marker(el)
+.setLngLat([-77.321264, 38.943057])
+.addTo(map);
 // map.addControl(new mapboxgl.Geocoder());
 
 //////////////////////////////////////////////////////////
