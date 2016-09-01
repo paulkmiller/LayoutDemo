@@ -55,9 +55,109 @@ map.on('load', function () {
                     "type": "Point",
                     "coordinates": [coords.home.long, coords.home.lat]
                 }
-            }]
-        }
-    });
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing1.long, coords.listing1.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing2.long, coords.listing2.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing3.long, coords.listing3.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing4.long, coords.listing4.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing4.long, coords.listing4.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing5.long, coords.listing5.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing6.long, coords.listing6.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing7.long, coords.listing7.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing8.long, coords.listing8.lat]
+                }
+            }, {
+                "type": "Feature",
+                "properties": {
+                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.listing9.long, coords.listing9.lat]
+                }
+        }]
+      }
+  });
 
     // Add a layer showing the listings.
     map.addLayer({
@@ -106,7 +206,7 @@ var coords = {
 
 var listings = {
   'welcome':{
-      bearing: 0,
+      // bearing: 0,
       duration: 4000,
       center: [coords.welcome.long, coords.welcome.lat],
       zoom: 4
@@ -120,56 +220,63 @@ var listings = {
   'listing1': {
       duration: 6000,
       center: [coords.listing1.long, coords.listing1.lat],
-      bearing: 150,
+      // bearing: 150,
       zoom: 17.3
      },
   'listing2': {
-      bearing: 90,
+      duration: 6000,
+      // bearing: 90,
       center: [coords.listing2.long, coords.listing2.lat],
       zoom: 17.3,
-      sped: 0.6
   },
   'listing3': {
-      bearing: 90,
+      duration: 6000,
+      // bearing: 90,
       center: [coords.listing3.long, coords.listing3.lat],
       zoom: 17.3
   },
   'listing4': {
-      bearing: 45,
+      duration: 6000,
+      // bearing: 45,
       center: [coords.listing4.long, coords.listing4.lat],
       zoom: 17.3,
   },
   'listing5': {
-      bearing: 180,
+      duration: 6000,
+      // bearing: 180,
       center: [coords.listing5.long, coords.listing5.lat],
       zoom: 17.3
   },
   'listing6': {
-      bearing: 90,
+      duration: 6000,
+      // bearing: 90,
       center: [coords.listing6.long, coords.listing6.lat],
       zoom: 17.3
   },
   'listing7': {
-      bearing: 90,
+      duration: 6000,
+      // bearing: 90,
       center: [coords.listing7.long, coords.listing7.lat],
       zoom: 17.3
   },
   'listing8': {
-      bearing: 90,
+      duration: 6000,
+      // bearing: 90,
       center: [coords.listing8.long, coords.listing8.lat],
       zoom: 17.3
   },
   'listing9': {
-      bearing: 90,
+      duration: 6000,
+      // bearing: 90,
       center: [coords.listing9.long, coords.listing9.lat],
       zoom: 17.3
   }
 };
 
-$.each(listings, function(listing_id, listing_hash) {
-  var center = listing_hash["center"];
-  add_point_to_map(center);
-});
+// $.each(listings, function(listing_id, listing_hash) {
+//   var center = listing_hash["center"];
+//   add_point_to_map(center);
+// });
 
 
 //////////////////////////////////////////////////////////
