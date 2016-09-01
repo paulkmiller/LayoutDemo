@@ -8,17 +8,6 @@ var map = new mapboxgl.Map({
     zoom: 4
 });
 
-map.addControl(new mapboxgl.Geocoder());
-
-
-// object = {
-//   'setup': function() {
-//
-//   },
-//   'teardown': function() {
-//
-//   }
-// }
 function add_point_to_map(center) {
   var el       =  document.createElement('div');
   el.className = 'marker';
@@ -28,18 +17,91 @@ function add_point_to_map(center) {
   .addTo(map);
 }
 
+
+
+
+
+
+
+
+
+
+
+function toolTip(center){
+  var popup = new mapboxgl.Popup({closeOnClick: false})
+      .setLngLat(center)
+      .setHTML('<h1>Hello World!</h1>')
+      .addTo(map);
+}
+
+$('.marker').on('click', function() {
+  toolTipAdd(center);
+});
+
+
+map.on('load', function () {
+    // Add a GeoJSON source containing place coordinates and information.
+    map.addSource("listings", {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "properties": {
+                    "description" : "<p>Testing Content for Home</p>",
+                    "icon": "marker"
+                },
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [coords.home.long, coords.home.lat]
+                }
+            }]
+        }
+    });
+
+    // Add a layer showing the listings.
+    map.addLayer({
+        "id": "listings",
+        "type": "symbol",
+        "source": "listings",
+        "layout": {
+            "icon-image": "{icon}-15",
+            "icon-allow-overlap": true,
+            "icon-padding": 4
+        }
+    });
+});
+
+map.on('click', function (e) {
+    var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
+
+    if (!features.length) {
+        return;
+    }
+
+    var feature = features[0];
+
+    // Populate the popup and set its coordinates
+    // based on the feature found.
+    var popup = new mapboxgl.Popup()
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(feature.properties.description)
+        .addTo(map);
+});
+
+
 var coords = {
   welcome:  { long: -77.356746, lat: 38.957575 },
   home:     { long: -77.321264, lat: 38.943057 },
-  listing1: { long: -77.356864, lat: 38.941288},
-  listing2: { long: -77.356746, lat: 38.957575},
-  listing3: { long: -77.358875, lat: 38.960888},
-  listing4: { long: -77.346688, lat: 38.939768},
-  listing5: { long: -77.353314, lat: 38.930013},
-  listing6: { long: -77.372076, lat: 38.973816},
-  listing7: { long: -77.345066, lat: 38.974635},
-  listing8: { long: -77.399277, lat: 38.946185},
-  listing9: { long: -77.396404, lat: 38.986175}
+  listing1: { long: -77.356864, lat: 38.941288 },
+  listing2: { long: -77.356746, lat: 38.957575 },
+  listing3: { long: -77.358875, lat: 38.960888 },
+  listing4: { long: -77.346688, lat: 38.939768 },
+  listing5: { long: -77.353314, lat: 38.930013 },
+  listing6: { long: -77.372076, lat: 38.973816 },
+  listing7: { long: -77.345066, lat: 38.974635 },
+  listing8: { long: -77.399277, lat: 38.946185 },
+  listing9: { long: -77.396404, lat: 38.986175 }
 }
 
 var listings = {
@@ -115,7 +177,7 @@ $.each(listings, function(listing_id, listing_hash) {
 //////////////////////////////////////////////////////////
 
 // On every scroll event, check which element is on screen
-document.querySelector('.scroll-wrap').addEventListener('scroll', function() {
+$('.scroll-wrap').on('scroll', function() {
     $.each(listings, function(listing_id, listing_hash) {
       if (isElementOnScreen(listing_id)) {
           setActiveListing(listing_id);
@@ -130,10 +192,8 @@ var activeListingName = 'home';
 function setActiveListing(listing_id) {
     // Ignore if the specified chapter is already active
     if (listing_id === activeListingName) return;
-
     // Update the map
     map.flyTo(listings[listing_id]);
-
     // Update the active listing
     document.getElementById(listing_id).setAttribute('class', 'active');
     document.getElementById(activeListingName).setAttribute('class', '');
@@ -157,6 +217,10 @@ function isElementOnScreen(id) {
 //             // e.lngLat is the longitude, latitude geographical position of the event
 //         JSON.stringify(e.lngLat);
 // });
+
+/// Add Geocoder ///
+
+map.addControl(new mapboxgl.Geocoder());
 
 
 })();
