@@ -58,7 +58,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 1</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -68,7 +68,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 2</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -78,7 +78,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 3</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -88,7 +88,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 4</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -98,7 +98,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 5</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -108,7 +108,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 6</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -118,7 +118,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 7</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -128,7 +128,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 8</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -138,7 +138,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 9</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
@@ -148,7 +148,7 @@ map.on('load', function () {
             }, {
                 "type": "Feature",
                 "properties": {
-                    "description": "<strong>Mad Crazy Awesome Apartment Showing</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
+                    "description": "<strong>Listing 10</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
                     "icon": "marker"
                 },
                 "geometry": {
