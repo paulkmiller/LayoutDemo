@@ -874,6 +874,9 @@ button:focus {
   border: 2px solid #fff;
   border-radius: 10px; }
 
+.flyby .mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  display: none; }
+
 .active {
   display: block !important; }
 

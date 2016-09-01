@@ -47,9 +47,9 @@
 //     background: #fff;
 // }
 
-// .mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
-//   display: none;
-// }
+.flyby .mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
+  display: none;
+}
 .active{
   display: block !important;
 }

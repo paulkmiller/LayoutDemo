@@ -5,7 +5,7 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v9',
     center: [-77.356746, 38.957575],
-    zoom: 3
+    zoom: 4
 });
 
 map.addControl(new mapboxgl.Geocoder());
@@ -28,67 +28,78 @@ function add_point_to_map(center) {
   .addTo(map);
 }
 
+var coords = {
+  welcome:  { long: -77.356746, lat: 38.957575 },
+  home:     { long: -77.321264, lat: 38.943057 },
+  listing1: { long: -77.356864, lat: 38.941288},
+  listing2: { long: -77.356746, lat: 38.957575},
+  listing3: { long: -77.358875, lat: 38.960888},
+  listing4: { long: -77.346688, lat: 38.939768},
+  listing5: { long: -77.353314, lat: 38.930013},
+  listing6: { long: -77.372076, lat: 38.973816},
+  listing7: { long: -77.345066, lat: 38.974635},
+  listing8: { long: -77.399277, lat: 38.946185},
+  listing9: { long: -77.396404, lat: 38.986175}
+}
 
 var listings = {
   'welcome':{
       bearing: 0,
-      center: [-77.356746, 38.957575],
-      minZoom: 13,
-      zoom: 3
+      duration: 4000,
+      center: [coords.welcome.long, coords.welcome.lat],
+      zoom: 4
   },
   'home': {
       // bearing: 27,
       duration: 8000,
-      speed: 1.2,
-      center: [-77.321264, 38.943057],
+      center: [coords.home.long, coords.home.lat],
       zoom: 17.3
   },
   'listing1': {
       duration: 6000,
-      center: [-77.356864, 38.941288],
+      center: [coords.listing1.long, coords.listing1.lat],
       bearing: 150,
       zoom: 17.3
      },
   'listing2': {
       bearing: 90,
-      center: [-77.356746, 38.957575],
+      center: [coords.listing2.long, coords.listing2.lat],
       zoom: 17.3,
-      speed: 0.6
+      sped: 0.6
   },
   'listing3': {
       bearing: 90,
-      center: [-77.358875, 38.960888],
+      center: [coords.listing3.long, coords.listing3.lat],
       zoom: 17.3
   },
   'listing4': {
       bearing: 45,
-      center: [-77.346688, 38.939768],
+      center: [coords.listing4.long, coords.listing4.lat],
       zoom: 17.3,
-      speed: 0.5
   },
   'listing5': {
       bearing: 180,
-      center: [-77.353314, 38.930013],
+      center: [coords.listing5.long, coords.listing5.lat],
       zoom: 17.3
   },
   'listing6': {
       bearing: 90,
-      center: [-77.372076, 38.973816],
+      center: [coords.listing6.long, coords.listing6.lat],
       zoom: 17.3
   },
   'listing7': {
       bearing: 90,
-      center: [-77.345066, 38.974635],
+      center: [coords.listing7.long, coords.listing7.lat],
       zoom: 17.3
   },
   'listing8': {
       bearing: 90,
-      center: [-77.399277, 38.946185],
+      center: [coords.listing8.long, coords.listing8.lat],
       zoom: 17.3
   },
   'listing9': {
       bearing: 90,
-      center: [-77.396404, 38.986175],
+      center: [coords.listing9.long, coords.listing9.lat],
       zoom: 17.3
   }
 };
@@ -146,5 +157,6 @@ function isElementOnScreen(id) {
 //             // e.lngLat is the longitude, latitude geographical position of the event
 //         JSON.stringify(e.lngLat);
 // });
+
 
 })();
