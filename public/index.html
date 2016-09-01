@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css" />
 		<link href='https://api.mapbox.com/mapbox-gl-js/v0.23.0/mapbox-gl.css' rel='stylesheet' />
+		<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.3.0/mapbox-gl-geocoder.css' type='text/css' />
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<script src="js/modernizr.custom.js"></script>
 	</head>
@@ -23,7 +24,7 @@
 			</div>
 			<div id="theGrid" class="mainExt">
 				<section class="grid">
-					
+
 					<a class="grid__item" href="#">
 						<h2 class="title title--preview">Mapbox "FlyBy" Demo</h2>
 						<div class="loader"></div>
@@ -75,8 +76,13 @@
 						<article class="content__item">
 							<!-- <iframe id="flyby" width="100%" height="100%"></iframe> -->
 							<div id='map'></div>
+							<!-- <div id="info"></div> -->
 								<div id='features'>
-							    <section id='home' class='active'>
+									<section id="welcome" class="active">
+										<h3>Welcome to the Listings View</h3>
+										<p>Where all your dreams come true</p>
+									</section>
+							    <section id='home'>
 							        <h3>Greater Washington Publishing</h3>
 							        <p>1800 Alexander Bell Drive, Ste 120 <br>Reston VA 20191</p>
 							    </section>
@@ -99,25 +105,29 @@
 							        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
 							        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
 							           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
-							        </p>    </section>
+							        </p>
+									</section>
 							    <section id='listing4'>
 							        <h3>Listing4</h3>
 							        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
 							        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
 							           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
-							        </p>    </section>
+							        </p>
+									</section>
 							    <section id='listing5'>
 							        <h3>Listing5</h3>
 							        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
 							        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
 							           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
-							        </p>    </section>
+							        </p>
+									</section>
 							    <section id='listing6'>
 							        <h3>Listing6</h3>
 							        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
 							        <p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
 							           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
-							        </p>    </section>
+							        </p>
+									</section>
 							    <section id='listing7'>
 							        <h3>Listing7</h3>
 							        <p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
@@ -125,6 +135,20 @@
 							           Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
 							        </p>
 							    </section>
+									<section id='listing8'>
+											<h3>Listing8</h3>
+											<p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+											<p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+												 Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+											</p>
+									</section>
+									<section id='listing9'>
+											<h3>Listing9</h3>
+											<p>Lumbersexual pitchfork biodiesel selvage, lo-fi cred stumptown four dollar toast sriracha bicycle rights neutra kitsch.</p>
+											<p>Neutra heirloom viral, you probably haven't heard of them sartorial godard chambray umami schlitz tote bag migas kitsch blog.
+												 Actually raw denim meditation you probably haven't heard of them cornhole green juice banjo lomo, pour-over ugh.
+											</p>
+									</section>
 							</div>
 						</article>
 
@@ -164,6 +188,7 @@
 		<script src="js/classie.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src='https://api.mapbox.com/mapbox-gl-js/v0.23.0/mapbox-gl.js'></script>
+		<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.3.0/mapbox-gl-geocoder.js'></script>
 		<script src="js/mapbox.js"></script>
 		<script src="js/main.js"></script>
 	</body>

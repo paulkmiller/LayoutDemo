@@ -848,24 +848,24 @@ button:focus {
   width: 70%;
   height: 100%; }
 
-#features {
+#features, .features_welcome {
   width: 30%;
   margin-left: 70%;
   font-family: sans-serif;
   overflow-y: scroll;
   background-color: #fafafa; }
-  #features section {
+  #features section, .features_welcome section {
     padding: 25px 50px;
     line-height: 25px;
     border-bottom: 1px solid #ddd;
     opacity: 0.25;
     font-size: 13px; }
-    #features section.active {
+    #features section.active, .features_welcome section.active {
       opacity: 1;
       color: black; }
-    #features section:last-child {
+    #features section:last-child, .features_welcome section:last-child {
       border-bottom: none;
-      margin-bottom: 200px; }
+      margin-bottom: 700px; }
 
 .marker {
   height: 20px;
@@ -873,9 +873,6 @@ button:focus {
   background-color: #42b7b2;
   border: 2px solid #fff;
   border-radius: 10px; }
-
-.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
-  display: none; }
 
 .active {
   display: block !important; }

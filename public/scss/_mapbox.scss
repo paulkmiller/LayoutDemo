@@ -3,7 +3,7 @@
   width: 70%;
   height: 100%;
 }
-#features {
+#features, .features_welcome {
   width: 30%;
   margin-left: 70%;
   font-family: sans-serif;
@@ -21,7 +21,7 @@
     }
     &:last-child{
       border-bottom: none;
-      margin-bottom: 200px;
+      margin-bottom: 700px;
     }
   }
 }
@@ -35,7 +35,6 @@
 }
 
 // #info {
-//     display: none;
 //     position: relative;
 //     margin: 0px auto;
 //     width: 50%;
@@ -48,9 +47,9 @@
 //     background: #fff;
 // }
 
-.mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
-  display: none;
-}
+// .mapboxgl-ctrl-geocoder.mapboxgl-ctrl{
+//   display: none;
+// }
 .active{
   display: block !important;
 }
