@@ -86,6 +86,16 @@ var listingData = [{
     description: "Derp9"
 }]
 
+function setupMap() {
+  activate
+  addEventListenerOne
+  addEventListenerOne
+}
+
+function teardownMap() {
+
+}
+
 //////////////////////////////////////////////////////////
 ///// GeoJSON for Listing Placement + Tooltip Info ///////
 //////////////////////////////////////////////////////////
@@ -106,27 +116,24 @@ function coordinateToMarkerPoint(description, long, lat) {
 var markerPoints = []
 
 
-$.each(listingData, function(listing_hash, marker) {
-    var marker = coordinateToMarkerPoint(listing_hash["description"], listing_hash["long"], listing_hash["lat"]);
+$.each(listingData, function(index, listing_hash) {
+    var marker = coordinateToMarkerPoint(listing_hash.description, listing_hash.long, listing_hash.lat);
     markerPoints.push(marker);
 
+    // create markers for map
     var el = document.createElement('div');
     el.className = 'marker';
     el.style.width = marker.properties.iconSize[0] + 'px';
     el.style.height = marker.properties.iconSize[1] + 'px';
-
+    // add event listener for tooltip info
     el.addEventListener('click', function(e) {
       console.log("it works");
     });
-
     // add marker to map
     new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
-        .setLngLat(marker.geometry.coordinates)
+        .setLngLat(listing_hash.long, listing_hash.lat)
         .addTo(map);
 });
-
-
-console.log(markerPoints);
 
 map.on('load', function() {
     // Add a GeoJSON source containing place coordinates and information.
