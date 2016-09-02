@@ -8,6 +8,7 @@ var map = new mapboxgl.Map({
     zoom: 4
 });
 
+
 function add_point_to_map(center) {
   var el       =  document.createElement('div');
   el.className = 'marker';
@@ -16,16 +17,6 @@ function add_point_to_map(center) {
   .setLngLat(center)
   .addTo(map);
 }
-
-
-
-
-
-
-
-
-
-
 
 function toolTip(center){
   var popup = new mapboxgl.Popup({closeOnClick: false})
@@ -38,142 +29,108 @@ $('.marker').on('click', function() {
   toolTipAdd(center);
 });
 
+var listingData = [{
+    listing_id: "welcome",
+    long: -77.356746,
+    lat: 38.957575,
+    description: "Derp"
+}, {
+    listing_id: "home",
+    long: -77.321264,
+    lat: 38.943057,
+    description: "Derp2"
+}, {
+    listing_id: "listing1",
+    long: -77.321264,
+    lat: 38.941288,
+    description: "Derp2"
+}, {
+    listing_id: "listing2",
+    long: -77.356746,
+    lat: 38.957575,
+    description: "Derp2"
+}, {
+    listing_id: "listing3",
+    long: -77.358875,
+    lat: 38.960888,
+    description: "Derp3"
+}, {
+    listing_id: "listing4",
+    long: -77.346688,
+    lat: 38.939768,
+    description: "Derp4"
+}, {
+    listing_id: "listing5",
+    long: -77.353314,
+    lat: 38.930013,
+    description: "Derp5"
+}, {
+    listing_id: "listing6",
+    long: -77.372076,
+    lat: 38.973816,
+    description: "Derp6"
+}, {
+    listing_id: "listing7",
+    long: -77.345066,
+    lat: 38.974635,
+    description: "Derp7"
+}, {
+    listing_id: "listing8",
+    long: -77.399277,
+    lat: 38.946185,
+    description: "Derp8"
+}, {
+    listing_id: "listing9",
+    long: -77.396404,
+    lat: 38.986175,
+    description: "Derp9"
+}]
 
-map.on('load', function () {
+//////////////////////////////////////////////////////////
+///// GeoJSON for Listing Placement + Tooltip Info ///////
+//////////////////////////////////////////////////////////
+function coordinateToMarkerPoint(description, long, lat) {
+    return {
+        "type": "Feature",
+        "properties": {
+            "description": description,
+            "icon": "marker"
+        },
+        "geometry": {
+            "type": "Point",
+            "coordinates": [long, lat]
+        }
+    }
+}
+
+
+var markerPoints = []
+
+$.each(listingData, function(listing_hash) {
+    markerPoints.push(coordinateToMarkerPoint(listing_hash["description"], listing_hash["long"], listing_hash["lat"]))
+});
+console.log(markerPoints);
+
+map.on('load', function() {
     // Add a GeoJSON source containing place coordinates and information.
     map.addSource("listings", {
         "type": "geojson",
         "data": {
             "type": "FeatureCollection",
-            "features": [{
-                "type": "Feature",
-                "properties": {
-                    "description" : "<p>Testing Content for Home</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.home.long, coords.home.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 1</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing1.long, coords.listing1.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 2</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing2.long, coords.listing2.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 3</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing3.long, coords.listing3.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 4</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing4.long, coords.listing4.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 5</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing4.long, coords.listing4.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 6</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing5.long, coords.listing5.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 7</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing6.long, coords.listing6.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 8</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing7.long, coords.listing7.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 9</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing8.long, coords.listing8.lat]
-                }
-            }, {
-                "type": "Feature",
-                "properties": {
-                    "description": "<strong>Listing 10</strong><p>Head to Lounge 201 (201 Massachusetts Avenue NE) Sunday for a <a href=\"http://madmens5finale.eventbrite.com/\" target=\"_blank\" title=\"Opens in a new window\">Mad Crazy Awesome Apartment Showing</a>, complete with 60s costume contest, Mad Men trivia, and retro food and drink. Probably some cigars too.</p>",
-                    "icon": "marker"
-                },
-                "geometry": {
-                    "type": "Point",
-                    "coordinates": [coords.listing9.long, coords.listing9.lat]
-                }
-        }]
-      }
-  });
-
-    // Add a layer showing the listings.
-    map.addLayer({
-        "id": "listings",
-        "type": "symbol",
-        "source": "listings",
-        "layout": {
-            "icon-image": "{icon}-15",
-            "icon-allow-overlap": true,
-            "icon-padding": 4
+            "features": markerPoints
         }
     });
 });
 
-map.on('click', function (e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['listings'] });
+
+//////////////////////////////////////////////////////////
+///////// Populates Tooltips Using Above Data ////////////
+//////////////////////////////////////////////////////////
+
+map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+        layers: ['listings']
+    });
 
     if (!features.length) {
         return;
@@ -189,95 +146,109 @@ map.on('click', function (e) {
         .addTo(map);
 });
 
-
-var coords = {
-  welcome:  { long: -77.356746, lat: 38.957575 },
-  home:     { long: -77.321264, lat: 38.943057 },
-  listing1: { long: -77.356864, lat: 38.941288 },
-  listing2: { long: -77.356746, lat: 38.957575 },
-  listing3: { long: -77.358875, lat: 38.960888 },
-  listing4: { long: -77.346688, lat: 38.939768 },
-  listing5: { long: -77.353314, lat: 38.930013 },
-  listing6: { long: -77.372076, lat: 38.973816 },
-  listing7: { long: -77.345066, lat: 38.974635 },
-  listing8: { long: -77.399277, lat: 38.946185 },
-  listing9: { long: -77.396404, lat: 38.986175 }
-}
+//////////////////////////////////////////////////////////
+////////// Listing Coordinates and Animation /////////////
+//////////////////////////////////////////////////////////
 
 var listings = {
-  'welcome':{
-      // bearing: 0,
-      duration: 4000,
-      center: [coords.welcome.long, coords.welcome.lat],
-      zoom: 4
-  },
-  'home': {
-      // bearing: 27,
-      duration: 8000,
-      center: [coords.home.long, coords.home.lat],
-      zoom: 17.3
-  },
-  'listing1': {
-      duration: 6000,
-      center: [coords.listing1.long, coords.listing1.lat],
-      // bearing: 150,
-      zoom: 17.3
-     },
-  'listing2': {
-      duration: 6000,
-      // bearing: 90,
-      center: [coords.listing2.long, coords.listing2.lat],
-      zoom: 17.3,
-  },
-  'listing3': {
-      duration: 6000,
-      // bearing: 90,
-      center: [coords.listing3.long, coords.listing3.lat],
-      zoom: 17.3
-  },
-  'listing4': {
-      duration: 6000,
-      // bearing: 45,
-      center: [coords.listing4.long, coords.listing4.lat],
-      zoom: 17.3,
-  },
-  'listing5': {
-      duration: 6000,
-      // bearing: 180,
-      center: [coords.listing5.long, coords.listing5.lat],
-      zoom: 17.3
-  },
-  'listing6': {
-      duration: 6000,
-      // bearing: 90,
-      center: [coords.listing6.long, coords.listing6.lat],
-      zoom: 17.3
-  },
-  'listing7': {
-      duration: 6000,
-      // bearing: 90,
-      center: [coords.listing7.long, coords.listing7.lat],
-      zoom: 17.3
-  },
-  'listing8': {
-      duration: 6000,
-      // bearing: 90,
-      center: [coords.listing8.long, coords.listing8.lat],
-      zoom: 17.3
-  },
-  'listing9': {
-      duration: 6000,
-      // bearing: 90,
-      center: [coords.listing9.long, coords.listing9.lat],
-      zoom: 17.3
-  }
+    'welcome': {
+        // bearing: 0,
+        duration: 4000,
+        center: [listingData[0].long, listingData[0].lat],
+        zoom: 4
+    },
+    'home': {
+        // bearing: 27,
+        duration: 8000,
+        center: [listingData[1].long, listingData[1].lat],
+        zoom: 17.3
+    },
+    'listing1': {
+        duration: 6000,
+        center: [listingData[2].long, listingData[2].lat],
+        // bearing: 150,
+        zoom: 17.3
+    },
+    'listing2': {
+        duration: 6000,
+        // bearing: 90,
+        center: [listingData[3].long, listingData[3].lat],
+        zoom: 17.3,
+    },
+    'listing3': {
+        duration: 6000,
+        // bearing: 90,
+        center: [listingData[4].long, listingData[4].lat],
+        zoom: 17.3
+    },
+    'listing4': {
+        duration: 6000,
+        // bearing: 45,
+        center: [listingData[5].long, listingData[5].lat],
+        zoom: 17.3,
+    },
+    'listing5': {
+        duration: 6000,
+        // bearing: 180,
+        center: [listingData[6].long, listingData[6].lat],
+        zoom: 17.3
+    },
+    'listing6': {
+        duration: 6000,
+        // bearing: 90,
+        center: [listingData[7].long, listingData[7].lat],
+        zoom: 17.3
+    },
+    'listing7': {
+        duration: 6000,
+        // bearing: 90,
+        center: [listingData[8].long, listingData[8].lat],
+        zoom: 17.3
+    },
+    'listing8': {
+        duration: 6000,
+        // bearing: 90,
+        center: [listingData[9].long, listingData[9].lat],
+        zoom: 17.3
+    },
+    'listing9': {
+        duration: 6000,
+        // bearing: 90,
+        center: [listingData[10].long, listingData[10].lat],
+        zoom: 17.3
+    }
 };
+
+
+//////////////////////////////////////////////////////////
+/////////// Original Loop for Custom Markers /////////////
+//////////////////////////////////////////////////////////
 
 // $.each(listings, function(listing_id, listing_hash) {
 //   var center = listing_hash["center"];
 //   add_point_to_map(center);
 // });
 
+//////////////////////////////////////////////////////////
+////////// Potential Loop for Custom Markers /////////////
+//////////////////////////////////////////////////////////
+
+geojson.features.forEach(function(marker) {
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
+
+    el.addEventListener('click', function(e) {
+      console.log("it works");
+    });
+
+    // add marker to map
+    new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
+});
 
 //////////////////////////////////////////////////////////
 ////////// Map Reposition w/ Chapter Tracker /////////////
@@ -286,10 +257,10 @@ var listings = {
 // On every scroll event, check which element is on screen
 $('.scroll-wrap').on('scroll', function() {
     $.each(listings, function(listing_id, listing_hash) {
-      if (isElementOnScreen(listing_id)) {
-          setActiveListing(listing_id);
-          e.preventDefault();
-      }
+        if (isElementOnScreen(listing_id)) {
+            setActiveListing(listing_id);
+            e.preventDefault();
+        }
     });
 });
 
@@ -315,7 +286,10 @@ function isElementOnScreen(id) {
     return bounds.top < window.innerHeight && bounds.bottom > 0;
 }
 
-////////////////////// Coords //////////////////////
+//////////////////////////////////////////////////////////
+//////////// Coordinates on Mouse Location ///////////////
+//////////////////////////////////////////////////////////
+
 // map.on('mousemove', function (e) {
 //     document.getElementById('info').innerHTML =
 //         // e.point is the x, y coordinates of the mousemove event relative
