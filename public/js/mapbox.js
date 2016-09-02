@@ -94,7 +94,7 @@ function coordinateToMarkerPoint(description, long, lat) {
         "type": "Feature",
         "properties": {
             "description": description,
-            "icon": "marker"
+            "iconSize": [20,20]
         },
         "geometry": {
             "type": "Point",
@@ -103,12 +103,29 @@ function coordinateToMarkerPoint(description, long, lat) {
     }
 }
 
-
 var markerPoints = []
 
-$.each(listingData, function(listing_hash) {
-    markerPoints.push(coordinateToMarkerPoint(listing_hash["description"], listing_hash["long"], listing_hash["lat"]))
+
+$.each(listingData, function(listing_hash, marker) {
+    var marker = coordinateToMarkerPoint(listing_hash["description"], listing_hash["long"], listing_hash["lat"]);
+    markerPoints.push(marker);
+
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.style.width = marker.properties.iconSize[0] + 'px';
+    el.style.height = marker.properties.iconSize[1] + 'px';
+
+    el.addEventListener('click', function(e) {
+      console.log("it works");
+    });
+
+    // add marker to map
+    new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
+        .setLngLat(marker.geometry.coordinates)
+        .addTo(map);
 });
+
+
 console.log(markerPoints);
 
 map.on('load', function() {
@@ -233,22 +250,22 @@ var listings = {
 ////////// Potential Loop for Custom Markers /////////////
 //////////////////////////////////////////////////////////
 
-geojson.features.forEach(function(marker) {
-    // create a DOM element for the marker
-    var el = document.createElement('div');
-    el.className = 'marker';
-    el.style.width = marker.properties.iconSize[0] + 'px';
-    el.style.height = marker.properties.iconSize[1] + 'px';
-
-    el.addEventListener('click', function(e) {
-      console.log("it works");
-    });
-
-    // add marker to map
-    new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
-        .setLngLat(marker.geometry.coordinates)
-        .addTo(map);
-});
+// geojson.features.forEach(function(marker) {
+//     // create a DOM element for the marker
+//     var el = document.createElement('div');
+//     el.className = 'marker';
+//     el.style.width = marker.properties.iconSize[0] + 'px';
+//     el.style.height = marker.properties.iconSize[1] + 'px';
+//
+//     el.addEventListener('click', function(e) {
+//       console.log("it works");
+//     });
+//
+//     // add marker to map
+//     new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
+//         .setLngLat(marker.geometry.coordinates)
+//         .addTo(map);
+// });
 
 //////////////////////////////////////////////////////////
 ////////// Map Reposition w/ Chapter Tracker /////////////
