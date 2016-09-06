@@ -99,12 +99,16 @@ function teardownMap() {
 //////////////////////////////////////////////////////////
 ///// GeoJSON for Listing Placement + Tooltip Info ///////
 //////////////////////////////////////////////////////////
+
+var markerPoints = []
+
 function coordinateToMarkerPoint(description, long, lat) {
     return {
         "type": "Feature",
         "properties": {
             "description": description,
-            "iconSize": [20,20]
+            "iconSize": [20,20],
+            "icon" : "marker"
         },
         "geometry": {
             "type": "Point",
@@ -113,26 +117,9 @@ function coordinateToMarkerPoint(description, long, lat) {
     }
 }
 
-var markerPoints = []
-
-
 $.each(listingData, function(index, listing_hash) {
     var marker = coordinateToMarkerPoint(listing_hash.description, listing_hash.long, listing_hash.lat);
     markerPoints.push(marker);
-
-    // create markers for map
-    var el = document.createElement('div');
-    el.className = 'marker';
-    el.style.width = marker.properties.iconSize[0] + 'px';
-    el.style.height = marker.properties.iconSize[1] + 'px';
-    // add event listener for tooltip info
-    el.addEventListener('click', function(e) {
-      console.log("it works");
-    });
-    // add marker to map
-    new mapboxgl.Marker(el, {offset: [-marker.properties.iconSize[0] / 2, -marker.properties.iconSize[1] / 2]})
-        .setLngLat(listing_hash.long, listing_hash.lat)
-        .addTo(map);
 });
 
 map.on('load', function() {
@@ -248,10 +235,10 @@ var listings = {
 /////////// Original Loop for Custom Markers /////////////
 //////////////////////////////////////////////////////////
 
-// $.each(listings, function(listing_id, listing_hash) {
-//   var center = listing_hash["center"];
-//   add_point_to_map(center);
-// });
+$.each(listings, function(listing_id, listing_hash) {
+  var center = listing_hash["center"];
+  add_point_to_map(center);
+});
 
 //////////////////////////////////////////////////////////
 ////////// Potential Loop for Custom Markers /////////////
